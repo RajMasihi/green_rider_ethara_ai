@@ -74,7 +74,10 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+  "https://gracious-playfulness-production-e79f.up.railway.app"
+]
 # CORS_ALLOWED_ORIGINS =os.getenv(
 #       "CORS_ALLOWED_ORIGINS",
 #       ""
