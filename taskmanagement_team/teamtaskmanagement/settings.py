@@ -26,17 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b6%2)(6*6%s%v_anp9aq%m#2rxn#67u@fyh@00p2z=kkg!o++i'
-# SECRET_KEY = os.getenv("SECRET_KEY")
+# SECRET_KEY = 'django-insecure-b6%2)(6*6%s%v_anp9aq%m#2rxn#67u@fyh@00p2z=kkg!o++i'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')=="true"
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS =os.getenv(
-      "ALLOWED_HOSTS"
-    ).split(",")
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -125,14 +122,10 @@ WSGI_APPLICATION = 'teamtaskmanagement.wsgi.application'
 #     }
 # }
 DATABASES = {
-
-    "default":dj_database_url.parse(
-            os.getenv(
-              "DATABASE_URL"
-            )
-        )
+    'default': dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
+    )
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
