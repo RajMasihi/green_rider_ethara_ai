@@ -1,0 +1,11 @@
+header{
+    background-color: #579ac7;
+}
+
+input{
+    border:rgb(70, 27, 213) solid 2px;
+    border-radius:20% ;
+}
+.green_row{
+    background-color: rgb(6, 234, 6) !important;
+}
