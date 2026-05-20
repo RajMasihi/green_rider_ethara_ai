@@ -9,11 +9,18 @@ function SignUp() {
     name: "",
     email: "",
     password: "",
+    is_admin: false,
   });
   const [message, setmessage] = useState("");
   const [Errors, setErrors] = useState({});
   const handlechange = (e) => {
-    setSignUpFormData({ ...SignUpFormData, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+
+    setSignUpFormData({
+      ...SignUpFormData,
+
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
   const SubmitForm = async (e) => {
     e.preventDefault();
@@ -63,7 +70,6 @@ function SignUp() {
           />
           {Errors.name && <p className="text-danger">{Errors.name[0]}</p>}
         </div>
-
         <div className="form-group p-lg-3">
           <label htmlFor="title" className="p-1">
             Email :
@@ -78,7 +84,6 @@ function SignUp() {
           />
           {Errors.email && <p className="text-danger">{Errors.email[0]}</p>}
         </div>
-
         <div className="form-group p-lg-3">
           <label htmlFor="title" className="p-1">
             Password :
@@ -94,6 +99,19 @@ function SignUp() {
           {Errors.password && (
             <p className="text-danger">{Errors.password[0]}</p>
           )}
+        </div>{" "}
+        <div className="form-check ms-3">
+          <input
+            type="checkbox"
+            name="is_admin"
+            className="form-check-input"
+            id="is_admin"
+            onChange={handlechange}
+          />
+
+          <label className="form-check-label" htmlFor="is_admin">
+            Is Admin
+          </label>
         </div>
         <div className="form-group d-flex justify-content-center p-lg-3">
           <a href="/Login" className="m-3 text-decoration-none">
