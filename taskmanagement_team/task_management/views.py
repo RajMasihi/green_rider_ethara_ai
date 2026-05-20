@@ -37,7 +37,7 @@ class signupview(APIView):
             name=serializer.validated_data.get('name')
             serializer.save()
             return Response({
-                "message":f"Dear {name} you are signup successfully"},status=status.HTTP_201_CREATED
+                "message":f"Dear {name} you are now signup successfully"},status=status.HTTP_201_CREATED
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
