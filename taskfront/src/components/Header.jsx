@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Header({ name }) {
+  const [admin, setadmin] = useState(
+    localStorage.getItem("is_admin") === "true",
+  );
   const navigate = useNavigate();
   const logout = () => {
     if (!confirm("Sure You want to logout")) {
@@ -22,7 +25,7 @@ function Header({ name }) {
         <span className="bg-black text-light rounded-5 text-center">
           ETHARA AI
         </span>
-        AdminDashboard
+        {admin ? " AdminDashboard" : "UserDashboard"}
       </h4>
       <div className="flex-grow-1 d-flex justify-content-center">
         <h2 className="text-white mb-0 text-uppercase">
