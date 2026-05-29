@@ -127,7 +127,7 @@ api.interceptors.response.use(
           await axios.post(
 
             // "http://127.0.0.1:8000/api/token/refresh/",
-            `${import.meta.env.VITE_API_URL}/api/token/refresh/`,
+            `${import.meta.env.VITE_API_URL}/token/refresh/`,
 
             {
               refresh:

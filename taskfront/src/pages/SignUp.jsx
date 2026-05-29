@@ -28,7 +28,7 @@ function SignUp() {
     try {
       const response = await axios.post(
         // "http://127.0.0.1:8000/api/signup/",
-        `${import.meta.env.VITE_API_URL}/api/singup/`,
+        `${import.meta.env.VITE_API_URL}/singup/`,
         SignUpFormData,
       );
       setmessage(response.data.message);
