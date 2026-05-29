@@ -21,7 +21,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await api.post("login/", formData);
+      const response = await api.post("/login/", formData);
 
       console.log(response.data);
 

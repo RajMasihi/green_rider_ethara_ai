@@ -26,11 +26,12 @@ function SignUp() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        // "http://127.0.0.1:8000/api/signup/",
-        `${import.meta.env.VITE_API_URL}/singup/`,
-        SignUpFormData,
-      );
+      // const response = await axios.post(
+      //   // "http://127.0.0.1:8000/api/signup/",
+      //   `${import.meta.env.VITE_API_URL}/signup/`,
+      //   SignUpFormData,
+      // );
+      const response = await api.post("/signup/", formData);
       setmessage(response.data.message);
       setTimeout(() => {
         setmessage("");
