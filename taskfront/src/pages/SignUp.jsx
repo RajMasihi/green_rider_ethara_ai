@@ -31,7 +31,7 @@ function SignUp() {
       //   `${import.meta.env.VITE_API_URL}/signup/`,
       //   SignUpFormData,
       // );
-      const response = await api.post("/signup/", formData);
+      const response = await api.post("/signup/", SignUpFormData);
       setmessage(response.data.message);
       setTimeout(() => {
         setmessage("");
