@@ -44,7 +44,6 @@ function SignUp() {
         console.log(errors);
         setErrors(errors);
       } else {
-        console.log("something wrong here", err.response.data);
         alert("Something wrong");
       }
     }
