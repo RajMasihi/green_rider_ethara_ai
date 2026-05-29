@@ -44,8 +44,8 @@ function SignUp() {
         console.log(errors);
         setErrors(errors);
       } else {
-        console.log("Error details:", err.message, err.code);
-        console.log("Something went wrong");
+        console.log("something wrong here", err.response.data);
+        alert("Something wrong");
       }
     }
   };
